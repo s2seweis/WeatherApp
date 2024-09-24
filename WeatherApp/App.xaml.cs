@@ -9,6 +9,7 @@ namespace WeatherApp
     /// </summary>
     public partial class App : Application
     {
+        // Hello World
     }
 
 }

@@ -16,9 +16,14 @@ namespace WeatherApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly string apiKey = "ece62dd137a40eea7dfe566d540a36c1";#
+
+        //https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
         public MainWindow()
         {
             InitializeComponent();
+
         }
     }
 }
