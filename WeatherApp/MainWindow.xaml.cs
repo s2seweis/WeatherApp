@@ -28,9 +28,31 @@ namespace WeatherApp
         {
             InitializeComponent();
 
+            WeatherMapResponse result = GetWeatherData("Doha");
+
+            string finalImage = "sun.png";
+            string currentWeather = result.weather[0].main.ToLower();
+
+            if (currentWeather.Contains("cloud"))
+            {
+                finalImage = "cloud.png";
+            } else if (currentWeather.Contains("rain"))
+            {
+                finalImage = "rain.png";
+            } else if (currentWeather.Contains("snow"))
+            {
+                finalImage = "snow.png";
+            } 
+
+            // UriKind.Relative = looks for the path from the .exe file
+            backgroundImage.ImageSource = new BitmapImage(new Uri("Images/" + finalImage, UriKind.Relative));
+            
+        }
+
+        public WeatherMapResponse GetWeatherData(string city)
+        {
             HttpClient httpClient = new HttpClient();
 
-            var city = "Berlin";
             var finalUri = requestUrl + "?q=" + city + "&appid=" + apiKey + "&units=metric";
 
             HttpResponseMessage httpResponse = httpClient.GetAsync(finalUri).Result;
@@ -39,9 +61,8 @@ namespace WeatherApp
 
             WeatherMapResponse weatherMapResponse = JsonConvert.DeserializeObject<WeatherMapResponse>(response);
 
-            Console.WriteLine(weatherMapResponse);
 
-
+            return weatherMapResponse;
 
         }
     }

@@ -1,0 +1,6 @@
+//To insert images:
+1. Go to Ansicht
+2. Open Eiegenschaftfenster
+3. Select Images
+4. Eigenschaftfenster => Bildvorgang: Inhalt
+5. Eigenschaftfenster => In Ausgabeverzeichnis kopieren => Kopieren wenn neuer
