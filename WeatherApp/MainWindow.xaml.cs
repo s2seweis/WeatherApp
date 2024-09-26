@@ -28,21 +28,30 @@ namespace WeatherApp
         {
             InitializeComponent();
 
-            WeatherMapResponse result = GetWeatherData("Doha");
+            UpdateData("Koblenz");
+        }
+
+        public void UpdateData(string city)
+            //Rename method, mark => right click "rename" => assign name /can be used for ather cases too
+        {
+            WeatherMapResponse result = GetWeatherData(city);
 
             string finalImage = "sun.png";
+
             string currentWeather = result.weather[0].main.ToLower();
 
             if (currentWeather.Contains("cloud"))
             {
                 finalImage = "cloud.png";
-            } else if (currentWeather.Contains("rain"))
+            }
+            else if (currentWeather.Contains("rain"))
             {
                 finalImage = "rain.png";
-            } else if (currentWeather.Contains("snow"))
+            }
+            else if (currentWeather.Contains("snow"))
             {
                 finalImage = "snow.png";
-            } 
+            }
 
             // UriKind.Relative = looks for the path from the .exe file
             backgroundImage.ImageSource = new BitmapImage(new Uri("Images/" + finalImage, UriKind.Relative));
@@ -53,7 +62,6 @@ namespace WeatherApp
             labelInfo.Content = result.weather[0].main;
 
             labelDescription.Content = result.weather[0].description;
-
         }
 
         public WeatherMapResponse GetWeatherData(string city)
@@ -72,5 +80,13 @@ namespace WeatherApp
             return weatherMapResponse;
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string query = textBoxQuery.Text;
+
+            UpdateData(query);
+        }
+
     }
 }
