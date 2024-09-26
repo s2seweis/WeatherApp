@@ -4,3 +4,16 @@
 3. Select Images
 4. Eigenschaftfenster => Bildvorgang: Inhalt
 5. Eigenschaftfenster => In Ausgabeverzeichnis kopieren => Kopieren wenn neuer
+
+Styling von UI Elementen ver‰ndern:
+
+1. UI Element markieren => 
+2.Rechts Klick auf den z.B. Button => 
+3Vorlage bearbeiten => 
+4.Kopie bearbeiten => 
+5.In Code Datei: "MainWondow.xaml" wird ein neues Template erstellt =>
+6.Style="{DynamicResource ButtonStyle1}" =>
+7.Nach oben gehen, die Properties finden =>
+8.Bei Property="IsMouseOver" & IsPressed remove the Setter
+
+Video: Kapitel:75; 09:45; "Suche und einbauen und Projekt abschlieﬂen"
