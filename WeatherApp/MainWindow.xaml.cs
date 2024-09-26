@@ -46,7 +46,14 @@ namespace WeatherApp
 
             // UriKind.Relative = looks for the path from the .exe file
             backgroundImage.ImageSource = new BitmapImage(new Uri("Images/" + finalImage, UriKind.Relative));
-            
+
+            // for °  => alt + 0176 => 22 °C
+            labelTemperature.Content = result.main.temp.ToString("F1") + "°C";
+
+            labelInfo.Content = result.weather[0].main;
+
+            labelDescription.Content = result.weather[0].description;
+
         }
 
         public WeatherMapResponse GetWeatherData(string city)

@@ -12,10 +12,70 @@
 
     <!--x:Name = "varName" for make the element accessible, for e.g. ImageSource="AppName;component/folder/file.png" -->
     <Grid>
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            
+            <ColumnDefinition>
+                
+            </ColumnDefinition>
+            
+            <ColumnDefinition>
+                
+            </ColumnDefinition>
+            
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            
+            <ColumnDefinition>
+                
+            </ColumnDefinition>
+
+
+            <ColumnDefinition Width="20"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="20"></RowDefinition>
+
+            <RowDefinition>
+                
+            </RowDefinition>
+            
+            <RowDefinition>
+                
+            </RowDefinition>
+            
+            <RowDefinition>
+                
+            </RowDefinition>
+
+            <RowDefinition Height="20"></RowDefinition>
+
+        </Grid.RowDefinitions>
+                
         <Grid.Background>
             <ImageBrush x:Name="backgroundImage" ImageSource="/WeatherApp;component/Images/Sun.png">
-                
             </ImageBrush>
         </Grid.Background>
+        <Label x:Name="labelTemperature" Grid.Row="2" Grid.Column="1" Content="40°C" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="100" FontWeight="Bold" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect ShadowDepth="5" BlurRadius="1" Color="Black" Opacity="0.95" />
+            </Label.Effect>
+        </Label>
+        
+        <Label x:Name="labelInfo" Grid.Row="3" Grid.Column="1" Content="Cloudy" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="White" VerticalAlignment="Top">
+            <Label.Effect>
+                <DropShadowEffect ShadowDepth="3" BlurRadius="1" Color="Black" Opacity="0.95" />
+            </Label.Effect>
+        </Label> 
+        
+        <Label x:Name="labelDescription" Grid.Row="3" Grid.Column="2" Content="Clear Sky" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="White" VerticalAlignment="Top">
+            <Label.Effect>
+                <DropShadowEffect ShadowDepth="3" BlurRadius="1" Color="Black" Opacity="0.95" />
+            </Label.Effect>
+        </Label>
     </Grid>
 </Window>
